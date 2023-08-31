@@ -12,10 +12,10 @@ console.log(`connecting to`, config.DBURL);
 mongoose
   .connect(config.DBURL)
   .then((result) => {
-    console.log('connected to MongoDB');
+    logger.info('connected to MongoDB');
   })
   .catch((error) => {
-    console.log('error connecting to MongoDb:', error.message);
+    logger.error('error connecting to MongoDb:', error.message);
   });
 app.use(cors());
 app.use(express.static('build'));
